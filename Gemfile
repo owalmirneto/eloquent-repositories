@@ -35,6 +35,7 @@ gem 'puma', '~> 3.2.0'
 group :development, :test do
   gem 'pry-rails', '~> 0.3.4'
   gem 'rubocop', '~> 0.38.0'
+  gem 'guard-rubocop', '~> 1.2.0'
   gem 'rspec-rails', '~> 3.4.2'
   gem 'factory_girl_rails', '~> 4.6.0'
 end

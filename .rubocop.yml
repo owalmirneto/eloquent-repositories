@@ -24,9 +24,6 @@ AllCops:
     - 'vendor/**/*'
     - 'log/**/*'
     - 'config/initializers/**/*'
-    - 'test/test_helper.rb'
-    - 'spec/spec_helper.rb'
-    - 'spec/rails_helper.rb'
 
 Rails:
   Enabled: true
