@@ -10,9 +10,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
-  <%= favicon_link_tag '/assets/favicon.ico' %>
+  <%= favicon_link_tag '/assets/favicon.png' %>
 </head>
 <body>
+
 <div id="loading">
   <div class="mask"></div>
   <div class="spiner">
@@ -20,18 +21,34 @@
     <p><%= t '.loading' %></p>
   </div>
 </div>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+
+<nav id="top-bar" class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only"><%= ENV['APP_NAME'] %></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <%= fa_icon :bars, class: 'fa-2x' %>
       </button>
-      <%= link_to root_path, class: 'navbar-brand' do %>
-        <%= image_tag '/assets/logo-white.svg' %>
+      <%= link_to root_path do %>
+        <%= image_tag '/assets/logo.svg', id: 'brand' %>
       <% end %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><%= fa_icon :search %></a></li>
+      </ul>
     </div>
   </div>
 </nav>
