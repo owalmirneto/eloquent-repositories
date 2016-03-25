@@ -16,6 +16,7 @@ Rails/HasAndBelongsToMany:
 AllCops:
   TargetRubyVersion: 2.3
   Exclude:
+    - 'Guardfile'
     - 'Gemfile.lock'
     - 'bin/**/*'
     - 'db/**/*'
