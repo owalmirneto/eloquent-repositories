@@ -29,6 +29,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'puma', '~> 3.2.0'
 
+# Bower for rails
+# https://github.com/rharriso/bower-rails
+gem 'bower-rails', '~> 0.10.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
