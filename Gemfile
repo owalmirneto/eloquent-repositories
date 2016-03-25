@@ -32,15 +32,18 @@ gem 'puma', '~> 3.2.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-rails', '~> 0.3.4'
+  gem 'rubocop', '~> 0.38.0'
+  gem 'rspec-rails', '~> 3.4.2'
+  gem 'factory_girl_rails', '~> 4.6.0'
+end
+
+group :test do
+  gem 'webmock', '~> 1.20.4'
+  gem 'shoulda-matchers', require: false
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
