@@ -3,7 +3,7 @@ ready = ->
   Bootstrap.init()
 
   # Modules
-  # Home.init()
+  Home.init()
 
 $(document).ready ready
 $(document).on 'page:load', ready
