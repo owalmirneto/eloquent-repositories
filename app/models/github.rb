@@ -8,10 +8,16 @@ class Github
   end
 
   def user
-    @user ||= self.class.get("/users/#{@username}")
+    @user ||= get_by("/users/#{@username}")
   end
 
-  def repos
-    @repos ||= self.class.get("/users/#{@username}/repos")
+  def repos(options = {})
+    @repos ||= get_by("/users/#{@username}/repos", options)
+  end
+
+  protected
+
+  def get_by(url, options = {})
+    self.class.get("#{url}?access_token=#{ENV['GITHUB_ACCESS_TOKEN']}&#{options.to_query}")
   end
 end

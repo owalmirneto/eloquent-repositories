@@ -51,6 +51,8 @@ group :development, :test do
   gem 'guard-rubocop', '~> 1.2.0'
   gem 'rspec-rails', '~> 3.4.2'
   gem 'factory_girl_rails', '~> 4.6.0'
+  # https://github.com/bkeepers/dotenv
+  gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
 end
 
 group :test do
