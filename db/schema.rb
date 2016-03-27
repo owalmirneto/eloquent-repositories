@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327112256) do
+ActiveRecord::Schema.define(version: 20160327114630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "repositories", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.string   "name"
+    t.string   "language"
+    t.integer  "stargazers_count"
+    t.text     "description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "repositories", ["owner_id"], name: "index_repositories_on_owner_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -28,4 +40,5 @@ ActiveRecord::Schema.define(version: 20160327112256) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "repositories", "users", column: "owner_id"
 end
