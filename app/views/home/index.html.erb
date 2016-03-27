@@ -1,4 +1,32 @@
 <div class="container">
+  <div class="row form-group">
+    <div class="col-sm-12">
+      <div class="input-group">
+        <input type="text" class="form-control input-lg" placeholder="Usuário do github" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-lg btn-default" type="submit">
+            <%= fa_icon :search %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <%= select_tag :type, options_for_select(GithubType.to_a), { class: 'form-control' } %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= select_tag :sort, options_for_select(GithubSort.to_a), { class: 'form-control' } %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= select_tag :direction, options_for_select(GithubDirection.to_a), { class: 'form-control' } %>
+    </div>
+  </div>
+
+  <hr />
   <div class="row">
     <div class="col-sm-3">
       <img class="img-rounded img-responsive" src="https://avatars2.githubusercontent.com/u/378380" />

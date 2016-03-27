@@ -36,6 +36,9 @@ gem 'bower-rails', '~> 0.10.0'
 # https://github.com/wfsneto/emmet_font_awesome
 gem 'emmet_font_awesome', '0.0.1'
 
+# https://github.com/wfsneto/emmet_font_awesome
+gem 'enumerate_it', '~> 1.2.8'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

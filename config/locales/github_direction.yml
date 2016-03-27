@@ -1,0 +1,5 @@
+pt-BR:
+  enumerations:
+    github_direction:
+      asc: Crescente
+      desc: Decrescente

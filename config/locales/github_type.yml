@@ -1,0 +1,6 @@
+pt-BR:
+  enumerations:
+    github_type:
+      owner: Meus repositórios
+      all: Todos repositórios
+      member: Outros repositórios

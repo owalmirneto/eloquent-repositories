@@ -1,0 +1,7 @@
+pt-BR:
+  enumerations:
+    github_sort:
+      full_name: Nome
+      created: Criado em
+      updated: Alterado em
+      pushed: Outros repositórios
