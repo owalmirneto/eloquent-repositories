@@ -39,6 +39,9 @@ gem 'emmet_font_awesome', '0.0.1'
 # https://github.com/wfsneto/emmet_font_awesome
 gem 'enumerate_it', '~> 1.2.8'
 
+# https://github.com/jnunemaker/httparty
+gem 'httparty', '~> 0.13.7'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -51,7 +54,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'webmock', '~> 1.20.4'
+  gem 'webmock', '~> 1.24.2'
   gem 'shoulda-matchers', require: false
 end
 
