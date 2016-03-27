@@ -61,6 +61,7 @@
             <div class="repository">
               <h4>
                 <%= repo['name'] %>
+                <small>@<%= repo['owner']['login'] %></small>
                 <small class="pull-right">
                   <%= repo['language'] %> <%= fa_icon :star %> <%= repo['stargazers_count'] %>
                 </small>
