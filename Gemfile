@@ -42,6 +42,9 @@ gem 'enumerate_it', '~> 1.2.8'
 # https://github.com/jnunemaker/httparty
 gem 'httparty', '~> 0.13.7'
 
+# https://github.com/collectiveidea/interactor
+gem 'interactor', '~> 3.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
