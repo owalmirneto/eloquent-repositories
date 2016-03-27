@@ -7,11 +7,11 @@ class Github
     @username = username
   end
 
-  def user(_options = {})
+  def user
     @user ||= self.class.get("/users/#{@username}")
   end
 
-  def repos(_options = {})
+  def repos
     @repos ||= self.class.get("/users/#{@username}/repos")
   end
 end
