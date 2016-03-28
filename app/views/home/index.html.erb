@@ -1,44 +1,16 @@
 <div class="container">
-  <div class="row form-group">
-    <div class="col-sm-12">
-      <div class="input-group">
-        <div class="input-group-addon">
-          <%= fa_icon :'github-alt' %>
-        </div>
-        <%= text_field_tag :username, params[:username], id: :github_username, class: 'form-control input-lg', placeholder: 'Usuário do github' %>
-        <div class="input-group-btn">
-          <button id="button_search" class="btn btn-lg btn-default" type="submit">
-            <%= fa_icon :search %>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render 'form_filter' %>
+
+  <hr />
 
   <% if @user.present? %>
-    <div class="row">
-      <div class="col-sm-4">
-        <%= select_tag :type, options_for_select(GithubType.to_a, params[:type]), { id: :github_type, class: 'form-control' } %>
-      </div>
-
-      <div class="col-sm-4">
-        <%= select_tag :sort, options_for_select(GithubSort.to_a, params[:sort]), { id: :github_sort, class: 'form-control' } %>
-      </div>
-
-      <div class="col-sm-4">
-        <%= select_tag :direction, options_for_select(GithubDirection.to_a, params[:direction]), { id: :github_direction, class: 'form-control' } %>
-      </div>
-    </div>
-
-    <hr />
-
     <div class="row">
       <div class="col-sm-3">
         <img class="img-rounded img-responsive" src="<%= @user.avatar_url %>" />
 
         <h4>
           <div><%= @user.name %></div>
-          <small>@<%= @user.login %></small>
+          <small><%= @user.username %></small>
         </h4>
 
         <hr />
@@ -51,11 +23,11 @@
         </p>
         <p class="email">
           <%= fa_icon :'envelope-o' %>
-          <%= link_to @user.email, "mailto:#{@user.email}" %>
+          <%= @user.link_to_email %>
         </p>
         <p class="created">
           <%= fa_icon :'clock-o' %>
-          Joined: <%= @user.created_at %>
+          <%= t '.joined_at' %>: <%= @user.created_date %>
         </p>
       </div>
 
@@ -66,13 +38,13 @@
             <div class="repository">
               <h4>
                 <%= repository.name %>
-                <small>@<%= repository.owner.login %></small>
+                <small>@<%= repository.owner_login %></small>
                 <small class="pull-right">
                   <%= repository.language %> <%= fa_icon :star %> <%= repository.stargazers_count %>
                 </small>
               </h4>
               <p><%= repository.description %></p>
-              Updated: <%= repository.updated_at %>
+              <%= t '.updated_at' %>: <%= repository.updated_date %>
               <hr />
             </div>
           <% end %>
@@ -81,8 +53,6 @@
       </div>
     </div>
   <% else %>
-  <div class="alert alert-info">
-    Usuário não encontrado
-  </div>
+    <div class="alert alert-info"><%= t '.user_not_found' %></div>
   <% end %>
 </div>

@@ -1,0 +1,31 @@
+<div class="row form-group">
+  <div class="col-sm-12">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <%= fa_icon :'github-alt' %>
+      </div>
+      <%= text_field_tag :username, params[:username], id: :github_username, class: 'form-control input-lg', placeholder: 'Usuário do github' %>
+      <div class="input-group-btn">
+        <button id="button_search" class="btn btn-lg btn-default" type="submit">
+          <%= fa_icon :search %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @user.present? %>
+<div class="row">
+  <div class="col-sm-4">
+    <%= select_tag :type, options_for_select(GithubType.to_a, params[:type]), { id: :github_type, class: 'form-control' } %>
+  </div>
+
+  <div class="col-sm-4">
+    <%= select_tag :sort, options_for_select(GithubSort.to_a, params[:sort]), { id: :github_sort, class: 'form-control' } %>
+  </div>
+
+  <div class="col-sm-4">
+    <%= select_tag :direction, options_for_select(GithubDirection.to_a, params[:direction]), { id: :github_direction, class: 'form-control' } %>
+  </div>
+</div>
+<% end %>

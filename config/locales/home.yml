@@ -1,0 +1,6 @@
+pt-BR:
+  home:
+    index:
+      joined_at: Cadastrado em
+      updated_at: Atualizado em
+      user_not_found: Nenhum usuário foi encontrado
