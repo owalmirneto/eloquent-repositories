@@ -5,7 +5,9 @@ class HomeController < ApplicationController
 
     @user = result.user
 
-    @repositories = @user.repositories.includes(:owner)
-      .filter(params).ordination(params) if @user
+    @repositories = @user.repositories
+                         .includes(:owner)
+                         .filter(params)
+                         .ordination(params) if @user
   end
 end

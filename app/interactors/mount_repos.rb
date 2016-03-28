@@ -10,7 +10,7 @@ class MountRepos
       context.repositories = context.repos.map do |repo|
         repo_params = repo.slice 'name', 'language', 'stargazers_count',
                                  'description', 'created_at', 'updated_at'
-        [ repo['owner']['login'], Repository.new(repo_params) ]
+        [repo['owner']['login'], Repository.new(repo_params)]
       end
     end
   end

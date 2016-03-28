@@ -11,7 +11,7 @@ RSpec.describe SearchUser, type: :interactor do
         allow(User).to receive(:find_by).with(login: username).and_return(user)
       end
 
-      it "succeeds" do
+      it 'succeeds' do
         expect(subject.context).to be_a_success
       end
     end
