@@ -3,11 +3,13 @@ class HomeController < ApplicationController
   def index
     result = SaveUserAndRepositories.call(username: params[:username])
 
-    @user = result.user
+    if result.user
+      @user = result.user.decorate
 
-    @repositories = @user.repositories
-                         .includes(:owner)
-                         .filter(params)
-                         .ordination(params) if @user
+      @repositories = result.user.repositories
+                            .includes(:owner)
+                            .ordination(params)
+                            .filter(params).decorate
+    end
   end
 end
