@@ -45,6 +45,9 @@ gem 'httparty', '~> 0.13.7'
 # https://github.com/collectiveidea/interactor
 gem 'interactor', '~> 3.0'
 
+# https://github.com/collectiveidea/delayed_job_active_record
+gem 'delayed_job_active_record', '~> 4.1.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 class HomeController < ApplicationController
   def index
-    github = Github.new(params[:username])
+    result = SaveUserAndRepositories.call(username: params[:username])
 
-    @repos = github.repos(params_search)
-    @user = github.user
+    @user = result.user
+    @repositories = @user.repositories.includes(:owner) if @user # .search(search_params)
   end
 
   private
 
-  def params_search
-    params.slice('controller', 'type', 'sort', 'direction')
+  def search_params
+    params.permit(:type, :sort, :direction)
   end
 end
